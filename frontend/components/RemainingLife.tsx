@@ -31,9 +31,9 @@ function timerReducer(state, action) {
 
 type personData = {
   person: {
-    id: number;
+    // id: number;
     sex: string;
-    birthDate: string;
+    birthDate: Date;
   };
 };
 
@@ -71,7 +71,7 @@ const RemainingLife = React.memo(({ person }: personData) => {
         clearInterval(intervalIdRef.current);
       }
     };
-  }, [person.id]);
+  }, [person]);
 
   const getLifeSpanForSeconds = async (sex) => {
     const fetchData = await apiClient.get("/life/lifespan", {
