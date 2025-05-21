@@ -34,4 +34,5 @@ frontend/next-env.d.ts
 # =======================
 # Backend configuration
 # =======================
-
+# Prisma
+prisma/migration_lock.toml
