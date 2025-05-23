@@ -131,19 +131,29 @@ PORT="(サーバのポート)"
 
 **注**："(データベースへの接続文字列)", "(任意の文字列)", "(クライアントのベース URL)", "(サーバのポート)"は、任意の値に置き換えてください。
 
-6. backend ディレクトリで以下のコマンドを実行してテーブルを作成する。
+6. prisma/schema.prisma の`provider`に使用するデータベースの種類を記入する。
+   ※本アプリではデフォルトで`postgresql`を使用しています。 <br />
+   変更する場合、https://www.prisma.io/docs/orm/overview/databases を参考にしてください。
+
+7. backend ディレクトリで以下のコマンドを実行してテーブルを作成する。
 
 ```
-npx prisma migrate --dev init
+npx prisma migrate dev --name init
 ```
 
-7. 2 の各ディレクトリで以下のコマンドを実行してアプリを起動する。
+※履歴から実行できないコマンドがある場合、backend ディレクトリで以下のコマンドで履歴ファイルを削除して、再度手順 7 を実施してください。
+
+```
+rm -rf prisma/migrations
+```
+
+8. 2 の各ディレクトリで以下のコマンドを実行してアプリを起動する。
 
 ```
 npm run dev
 ```
 
-8. frontend ディレクトリで 7 を実行すると表示される、`http://localhost:xxxxxxx` にアクセスする。
+9. frontend ディレクトリで 7 を実行すると表示される、`http://localhost:xxxxxxx` にアクセスする。
 
 # サイト機能一覧
 
