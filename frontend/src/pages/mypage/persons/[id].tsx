@@ -4,16 +4,16 @@ import { useRouter } from "next/router";
 
 // state
 import { useRecoilValue } from "recoil";
-import userAtom from "../../../../recoil/atom/userAtoms";
+import userAtom from "../../../recoil/atom/userAtoms";
 
 // library
 import apiClient from "../../../lib/apiClient";
 import { handleErrorResponse } from "../../../lib/errorHandler";
 
 // components
-import BackLink from "../../../../components/BackLink";
-import PageHead from "../../../../components/PageHead";
-import ErrorMessageList from "../../../../components/ErrorMessageList";
+import BackLink from "../../../components/ui/BackLink";
+import PageHead from "../../../components/layout/PageHead";
+import ErrorMessageList from "../../../components/err/ErrorMessageList";
 
 // types
 import { SexType } from "../../../types/type";
@@ -119,7 +119,7 @@ const PersonPage = () => {
               err,
               router,
               router.asPath,
-              setValidationErrorMessages,
+              setValidationErrorMessages
             );
           });
       }

@@ -2,7 +2,7 @@
 import { atom } from "recoil";
 
 // types
-import { errType } from "../../src/types/type";
+import { errType } from "../../types/type";
 
 const errMessagesAtom = atom<errType>({
   key: "errMessagesAtom",

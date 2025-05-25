@@ -3,10 +3,10 @@ import React, { useState, useEffect, useReducer, useRef } from "react";
 import { ClipLoader } from "react-spinners";
 
 // library
-import apiClient from "../src/lib/apiClient";
+import apiClient from "../../lib/apiClient";
 
 // types
-import { RemainingLifeProps } from "../src/types/type";
+import { RemainingLifeProps } from "../../types/type";
 
 // MUI
 import { Box } from "@mui/material";

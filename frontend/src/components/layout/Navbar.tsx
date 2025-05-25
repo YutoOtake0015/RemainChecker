@@ -6,10 +6,10 @@ import Link from "next/link";
 
 // state
 import { useRecoilState } from "recoil";
-import userAtom from "../recoil/atom/userAtoms";
+import userAtom from "../../recoil/atom/userAtoms";
 
 // library
-import { signout } from "../src/lib/authHelpers";
+import { signout } from "../../lib/authHelpers";
 
 // MUI
 import {
@@ -28,7 +28,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Drawer from "@mui/material/Drawer";
 
 // CSS
-import styles from "../src/styles/components/NavbarStyle.module.css";
+import styles from "../../styles/components/NavbarStyle.module.css";
 
 const buttonStyle = {
   whiteSpace: "nowrap",

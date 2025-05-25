@@ -4,7 +4,7 @@ import { ClockLoader } from "react-spinners";
 
 // state
 import { useRecoilValue } from "recoil";
-import { loadingAtom } from "../recoil/atom/loadingAtom";
+import { loadingAtom } from "../../recoil/atom/loadingAtom";
 
 // MUI
 import { Box } from "@mui/material";

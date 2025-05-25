@@ -1,5 +1,5 @@
 import { useSetRecoilState } from "recoil";
-import { loadingAtom } from "../../recoil/atom/loadingAtom";
+import { loadingAtom } from "../recoil/atom/loadingAtom";
 
 export const useLoading = () => {
   const setLoading = useSetRecoilState(loadingAtom);

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 // state
 import { useRecoilValue } from "recoil";
-import userAtom from "../../../../recoil/atom/userAtoms";
+import userAtom from "../../../recoil/atom/userAtoms";
 
 // utility
 import { format } from "date-fns";
@@ -13,10 +13,10 @@ import { format } from "date-fns";
 import apiClient from "../../../lib/apiClient";
 
 // components
-import RemainingLife from "../../../../components/RemainingLife";
-import BackLink from "../../../../components/BackLink";
-import PageHead from "../../../../components/PageHead";
-import ProtectRoute from "../../../../components/ProtectRoute";
+import RemainingLife from "../../../components/common/RemainingLife";
+import BackLink from "../../../components/ui/BackLink";
+import PageHead from "../../../components/layout/PageHead";
+import ProtectRoute from "../../../components/layout/ProtectRoute";
 
 // types
 import { personType } from "../../../types/type";
@@ -72,7 +72,7 @@ const Persons = () => {
   const formatBirthDate = (params: GridRenderCellParams<any>) => {
     const formattedDate = format(
       new Date(params.row.birthDate),
-      "yyyy年MM月dd日",
+      "yyyy年MM月dd日"
     );
     return formattedDate;
   };

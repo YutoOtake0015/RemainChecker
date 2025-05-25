@@ -10,9 +10,9 @@ import { AuthProvider } from "../context/auth";
 import { ja } from "date-fns/locale";
 
 // components
-import Navbar from "../../components/Navbar";
-import ClearErrorMessages from "../../components/ClearErrorMessages";
-import LoadingIndicator from "../../components/LoadingIndicator";
+import Navbar from "../components/layout/Navbar";
+import ClearErrorMessages from "../components/err/ClearErrorMessages";
+import LoadingIndicator from "../components/ui/LoadingIndicator";
 
 // MUI
 import { CssBaseline } from "@mui/material";

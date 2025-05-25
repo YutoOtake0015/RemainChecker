@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 
 // state
 import { useRecoilState } from "recoil";
-import userAtom from "../../../../recoil/atom/userAtoms";
-import errMessagesAtom from "../../../../recoil/atom/errMessagesAtom";
+import userAtom from "../../../recoil/atom/userAtoms";
+import errMessagesAtom from "../../../recoil/atom/errMessagesAtom";
 
 // library
 import apiClient from "../../../lib/apiClient";
@@ -16,10 +16,10 @@ import { handleErrorResponse } from "../../../lib/errorHandler";
 import { errType, userType } from "../../../types/type";
 
 // components
-import BackLink from "../../../../components/BackLink";
-import PageHead from "../../../../components/PageHead";
-import ProtectRoute from "../../../../components/ProtectRoute";
-import ErrorMessageList from "../../../../components/ErrorMessageList";
+import BackLink from "../../../components/ui/BackLink";
+import PageHead from "../../../components/layout/PageHead";
+import ProtectRoute from "../../../components/layout/ProtectRoute";
+import ErrorMessageList from "../../../components/err/ErrorMessageList";
 
 // MUI
 import {

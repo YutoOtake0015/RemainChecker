@@ -5,7 +5,7 @@ import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 
 // components
-import BackLink from "../../components/BackLink";
+import BackLink from "../components/ui/BackLink";
 
 // CSS
 import styles from "../styles/common.module.css";

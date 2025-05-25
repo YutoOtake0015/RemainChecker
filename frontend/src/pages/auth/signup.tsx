@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 
 // state
 import { useRecoilState, useSetRecoilState } from "recoil";
-import errMessagesAtom from "../../../recoil/atom/errMessagesAtom";
-import userAtom from "../../../recoil/atom/userAtoms";
+import errMessagesAtom from "../../recoil/atom/errMessagesAtom";
+import userAtom from "../../recoil/atom/userAtoms";
 
 // library
 import apiClient from "../../lib/apiClient";
@@ -13,9 +13,9 @@ import { handleErrorResponse } from "../../lib/errorHandler";
 import { signin } from "../../lib/authHelpers";
 
 // components
-import PageHead from "../../../components/PageHead";
-import HomeLink from "../../../components/HomeLink";
-import ErrorMessageList from "../../../components/ErrorMessageList";
+import PageHead from "../../components/layout/PageHead";
+import HomeLink from "../../components/ui/HomeLink";
+import ErrorMessageList from "../../components/err/ErrorMessageList";
 
 // types
 import { SexType } from "../../types/type";
@@ -82,7 +82,7 @@ export default function SignUp() {
             password,
             setUser,
             setValidationErrorMessages,
-            router,
+            router
           );
           stopLoading();
         })
@@ -91,7 +91,7 @@ export default function SignUp() {
             err,
             router,
             router.asPath,
-            setValidationErrorMessages,
+            setValidationErrorMessages
           );
         })
         .finally(() => stopLoading());

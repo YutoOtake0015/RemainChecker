@@ -2,7 +2,7 @@
 import { atom } from "recoil";
 
 // types
-import { userType } from "../../src/types/type";
+import { userType } from "../../types/type";
 
 const userAtom = atom<userType>({
   key: "userAtom",

@@ -7,8 +7,8 @@ import Link from "next/link";
 import { format, differenceInYears } from "date-fns";
 
 // components
-import RemainingLife from "../../components/RemainingLife";
-import PageHead from "../../components/PageHead";
+import RemainingLife from "../components/common/RemainingLife";
+import PageHead from "../components/layout/PageHead";
 
 // types
 import { SexType, userProfileType } from "../types/type";

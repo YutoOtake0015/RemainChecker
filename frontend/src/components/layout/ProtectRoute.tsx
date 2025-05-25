@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 import { useRouter } from "next/router";
 
 // types
-import { userType } from "../src/types/type";
+import { userType } from "../../types/type";
 
 const ProtectRoute: React.FC<{ user: userType; children: ReactNode }> = ({
   user,

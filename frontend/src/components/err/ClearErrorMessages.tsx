@@ -4,10 +4,10 @@ import { useRouter } from "next/router";
 
 // state
 import { useSetRecoilState } from "recoil";
-import errMessagesAtom from "../recoil/atom/errMessagesAtom";
+import errMessagesAtom from "../../recoil/atom/errMessagesAtom";
 
 // types
-import { errType } from "../src/types/type";
+import { errType } from "../../types/type";
 
 interface ClearErrorMessagesProps {
   children: ReactNode;

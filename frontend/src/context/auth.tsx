@@ -5,7 +5,7 @@ import { ClockLoader } from "react-spinners";
 
 // state
 import { useSetRecoilState } from "recoil";
-import userAtom from "../../recoil/atom/userAtoms";
+import userAtom from "../recoil/atom/userAtoms";
 
 // library
 import apiClient from "../lib/apiClient";
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           })
           .catch(() => {
             alert(
-              "システムとの通信が切断されました。\nログインからやり直してください。",
+              "システムとの通信が切断されました。\nログインからやり直してください。"
             );
             signout(setUser, router);
           });

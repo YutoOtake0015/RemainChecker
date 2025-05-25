@@ -4,16 +4,16 @@ import { useRouter } from "next/router";
 
 // state
 import { useRecoilState, useSetRecoilState } from "recoil";
-import errMessagesAtom from "../../../recoil/atom/errMessagesAtom";
-import userAtom from "../../../recoil/atom/userAtoms";
+import errMessagesAtom from "../../recoil/atom/errMessagesAtom";
+import userAtom from "../../recoil/atom/userAtoms";
 
 // library
 import { signin } from "../../lib/authHelpers";
 
 // components
-import PageHead from "../../../components/PageHead";
-import HomeLink from "../../../components/HomeLink";
-import ErrorMessageList from "../../../components/ErrorMessageList";
+import PageHead from "../../components/layout/PageHead";
+import HomeLink from "../../components/ui/HomeLink";
+import ErrorMessageList from "../../components/err/ErrorMessageList";
 
 // hooks
 import { useLoading } from "../../hooks/useLoading";
