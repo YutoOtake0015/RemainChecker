@@ -100,14 +100,14 @@ erDiagram
 
 1. ローカルにソースコードをダウンロードする。
 
-```
+```zsh
 git clone https://github.com/YutoOtake0015/RemainCheck.git
 ```
 
 2. frontend ディレクトリと backend ディレクトリに cd コマンドで移動。
 3. 2 の各ディレクトリでライブラリをインストールする。
 
-```
+```zsh
 npm install
 ```
 
@@ -137,23 +137,30 @@ PORT="(サーバのポート)"
 
 7. backend ディレクトリで以下のコマンドを実行してテーブルを作成する。
 
-```
+```zsh
 npx prisma migrate dev --name init
 ```
 
 ※履歴から実行できないコマンドがある場合、backend ディレクトリで以下のコマンドで履歴ファイルを削除して、再度手順 7 を実施してください。
 
-```
+```zsh
 rm -rf prisma/migrations
 ```
 
-8. 2 の各ディレクトリで以下のコマンドを実行してアプリを起動する。
+8. データベースに接続し、以下コマンドで平均寿命を登録する。
 
+```sql
+INSERT INTO AverageLife (age, sex, year) VALUES (81.05, 'male', '2022');
+INSERT INTO AverageLife (age, sex, year) VALUES (87.09, 'female', '2022');
 ```
+
+9. 2 の各ディレクトリで以下のコマンドを実行してアプリを起動する。
+
+```zsh
 npm run dev
 ```
 
-9. frontend ディレクトリで 7 を実行すると表示される、`http://localhost:xxxxxxx` にアクセスする。
+10. frontend ディレクトリで 9 を実行すると表示される、`http://localhost:xxxxxxx` にアクセスする。
 
 # サイト機能一覧
 
@@ -201,8 +208,6 @@ token は各ユーザが使用するブラウザの Cookie に保管します。
 例えば、余命が短い人物が判明した場合、その人と会う回数を多くすることで
 
 # 今後の実装予定
-
-今後、以下を実装予定です。
 
 - パスワード再設定機能
 - 他サービスアカウントでの認証機能
