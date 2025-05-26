@@ -28,7 +28,7 @@ router.get("/lifespan", async (req: Request, res: Response) => {
 
     const remainingTimeInSeconds = await getRemainTimeForSeconds(
       sex,
-      birthDate,
+      birthDate
     );
 
     return res.json({ remainTime: remainingTimeInSeconds });
