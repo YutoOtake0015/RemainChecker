@@ -3,7 +3,7 @@ import React from "react";
 import type { AppProps } from "next/app";
 
 // state
-import { RecoilRoot } from "recoil";
+import { Provider } from "jotai";
 import { AuthProvider } from "../context/auth";
 
 // utility
@@ -21,7 +21,7 @@ import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <RecoilRoot>
+    <Provider>
       <ClearErrorMessages>
         <LoadingIndicator />
         <AuthProvider>
@@ -32,6 +32,6 @@ export default function App({ Component, pageProps }: AppProps) {
           </LocalizationProvider>
         </AuthProvider>
       </ClearErrorMessages>
-    </RecoilRoot>
+    </Provider>
   );
 }

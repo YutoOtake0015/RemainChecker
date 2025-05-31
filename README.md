@@ -46,14 +46,24 @@ https://remain-checker.com<br >
 | **フロントエンド** | HTML              | -                  |
 |                    | CSS               | -                  |
 |                    | JavaScript        | -                  |
-|                    | Material UI (MUI) | 5.14.16            |
-|                    | TypeScript        | 5.2.2              |
-|                    | React             | 18.2.0             |
-|                    | Next.js           | 14.0.0             |
+|                    | TypeScript        | 5.8.3              |
+|                    | React             | 19.1.0             |
+|                    | Next.js           | 15.3.3             |
+|                    | Material UI (MUI) | 7.1.0              |
+|                    | Jotai             | 2.12.5             |
+|                    | React Router DOM  | 6.30.1             |
+|                    | React Spinners    | 0.17.0             |
 | **バックエンド**   | TypeScript        | 5.3.3              |
 |                    | Node.js           | 20.8.0             |
 |                    | Express           | 4.18.2             |
 |                    | Prisma            | 5.5.2              |
+|                    | ts-node           | 10.9.2             |
+|                    | bcrypt            | 5.1.1              |
+|                    | cors              | 2.8.5              |
+|                    | dotenv            | 16.3.1             |
+|                    | joi               | 17.11.0            |
+|                    | jsonwebtoken      | 9.0.2              |
+|                    | nodemon           | 3.0.1              |
 | **データベース**   | PostgreSQL        | 15.1 (Supabase)    |
 | **実行環境**       | Vercel            | - (フロントエンド) |
 |                    | Render            | - (バックエンド)   |

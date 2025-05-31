@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 // state
-import { useRecoilValue } from "recoil";
-import userAtom from "../../../recoil/atom/userAtoms";
+import { useAtomValue } from "jotai";
+import { userAtom } from "../../../jotai/atom/userAtoms";
 
 // utility
 import { format } from "date-fns";
@@ -39,7 +39,7 @@ const Persons = () => {
   const [persons, setPersons] = useState<personType[] | null>(null);
 
   // 共有情報
-  const user = useRecoilValue(userAtom);
+  const user = useAtomValue(userAtom);
 
   // ソート設定
   const [sortModel, setSortModel] = useState<GridSortModel>([]);

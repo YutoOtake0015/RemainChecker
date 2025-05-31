@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 // state
-import { useRecoilValue } from "recoil";
-import userAtom from "../../../recoil/atom/userAtoms";
+import { useAtomValue } from "jotai";
+import { userAtom } from "../../../jotai/atom/userAtoms";
 
 // library
 import apiClient from "../../../lib/apiClient";
@@ -45,7 +45,7 @@ const PersonPage = () => {
   const { id } = router.query;
 
   // 共有情報
-  const user = useRecoilValue(userAtom);
+  const user = useAtomValue(userAtom);
   const [validationErrorMessages, setValidationErrorMessages] = useState([]);
 
   // 人物情報
@@ -155,7 +155,7 @@ const PersonPage = () => {
                 sx={{ mt: 3 }}
               >
                 <Grid container spacing={2}>
-                  <Grid item xs={12}>
+                  <Grid size={{ xs: 12 }}>
                     <FormControl fullWidth>
                       <TextField
                         autoComplete="given-name"
@@ -176,7 +176,7 @@ const PersonPage = () => {
                     </FormControl>
                   </Grid>
 
-                  <Grid item xs={12} sm={8}>
+                  <Grid size={{ xs: 12, sm: 8 }}>
                     <FormControl fullWidth>
                       <DatePicker
                         label="生年月日"
@@ -192,7 +192,7 @@ const PersonPage = () => {
                     </FormControl>
                   </Grid>
 
-                  <Grid item xs={12} sm={4}>
+                  <Grid size={{ xs: 12, sm: 4 }}>
                     <FormControl fullWidth>
                       <InputLabel htmlFor="gender">性別</InputLabel>
                       <Select

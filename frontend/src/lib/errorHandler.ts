@@ -1,9 +1,6 @@
 // React & Next.js
 import { NextRouter } from "next/router";
 
-// state
-import { SetterOrUpdater } from "recoil";
-
 // library
 import { AxiosError } from "axios";
 
@@ -21,7 +18,7 @@ type handleErrorResponseType = (
   err: AxiosError<CustomErrorResponse>,
   router: NextRouter,
   redirectUrl: string,
-  setValidationErrorMessages: SetterOrUpdater<errType>
+  setValidationErrorMessages: (messages: errType) => void
 ) => void;
 
 export const handleErrorResponse: handleErrorResponseType = (

@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 // state
-import { useRecoilValue } from "recoil";
-import userAtom from "../../recoil/atom/userAtoms";
+import { useAtomValue } from "jotai";
+import { userAtom } from "../../jotai/atom/userAtoms";
 
 // utility
 import { format, differenceInYears } from "date-fns";
@@ -28,7 +28,7 @@ import styles from "../../styles/indexStyle.module.css";
 
 export default function Home() {
   // 共有情報
-  const user = useRecoilValue(userAtom);
+  const user = useAtomValue(userAtom);
 
   // 人物情報
   const [person, setPerson] = useState<userProfileType>(null);

@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const removeImports = require("next-remove-imports")();
 
-module.exports = nextConfig
+const nextConfig = removeImports({
+  reactStrictMode: true,
+  transpilePackages: ["@mui/x-data-grid"],
+  webpack(config, options) {
+    return config;
+  },
+});
+
+module.exports = nextConfig;

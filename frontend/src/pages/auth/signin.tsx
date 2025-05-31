@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 
 // state
-import { useRecoilState, useSetRecoilState } from "recoil";
-import errMessagesAtom from "../../recoil/atom/errMessagesAtom";
-import userAtom from "../../recoil/atom/userAtoms";
+import { useAtom, useSetAtom } from "jotai";
+import errMessagesAtom from "../../jotai/atom/errMessagesAtom";
+import { userAtom } from "../../jotai/atom/userAtoms";
 
 // library
 import { signin } from "../../lib/authHelpers";
@@ -36,9 +36,9 @@ export default function SignIn() {
   const [password, setPassword] = useState<string>();
 
   // 共有情報
-  const setUser = useSetRecoilState(userAtom);
+  const setUser = useSetAtom(userAtom);
   const [validationErrorMessages, setValidationErrorMessages] =
-    useRecoilState(errMessagesAtom);
+    useAtom(errMessagesAtom);
 
   // ローディング状態
   const { startLoading, stopLoading } = useLoading();

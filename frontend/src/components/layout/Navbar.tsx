@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 // state
-import { useRecoilState } from "recoil";
-import userAtom from "../../recoil/atom/userAtoms";
+import { useAtom } from "jotai";
+import { userAtom } from "../../jotai/atom/userAtoms";
 
 // library
 import { signout } from "../../lib/authHelpers";
@@ -42,7 +42,7 @@ const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
 
   // 共有情報
-  const [user, setUser] = useRecoilState(userAtom);
+  const [user, setUser] = useAtom(userAtom);
 
   // メニューの切り替え
   const handleDrawerOpen = () => {

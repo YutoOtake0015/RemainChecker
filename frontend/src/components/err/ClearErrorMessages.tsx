@@ -3,19 +3,15 @@ import React, { ReactNode, useEffect } from "react";
 import { useRouter } from "next/router";
 
 // state
-import { useSetRecoilState } from "recoil";
-import errMessagesAtom from "../../recoil/atom/errMessagesAtom";
-
-// types
-import { errType } from "../../types/type";
+import { useSetAtom } from "jotai";
+import errMessagesAtom from "../../jotai/atom/errMessagesAtom";
 
 interface ClearErrorMessagesProps {
   children: ReactNode;
 }
 
 const ClearErrorMessages = ({ children }: ClearErrorMessagesProps) => {
-  const setValidationErrorMessages =
-    useSetRecoilState<errType>(errMessagesAtom);
+  const setValidationErrorMessages = useSetAtom(errMessagesAtom);
   const router = useRouter();
 
   useEffect(() => {

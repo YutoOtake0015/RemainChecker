@@ -4,15 +4,12 @@ import { useRouter } from "next/router";
 import { ClockLoader } from "react-spinners";
 
 // state
-import { useSetRecoilState } from "recoil";
-import userAtom from "../recoil/atom/userAtoms";
+import { useSetAtom } from "jotai";
+import { userAtom } from "../jotai/atom/userAtoms";
 
 // library
 import apiClient from "../lib/apiClient";
 import { signout } from "../lib/authHelpers";
-
-// types
-import { userType } from "../types/type";
 
 // MUI
 import { Box } from "@mui/material";
@@ -32,7 +29,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const router = useRouter();
 
   // 共有情報
-  const setUser = useSetRecoilState<userType>(userAtom);
+  const setUser = useSetAtom(userAtom);
 
   // ローディング状態
   const [isLoading, setIsLoading] = useState<boolean>(true);

@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 // state
-import { useRecoilState, useRecoilValue } from "recoil";
-import userAtom from "../../../recoil/atom/userAtoms";
-import errMessagesAtom from "../../../recoil/atom/errMessagesAtom";
+import { useAtom, useAtomValue } from "jotai";
+import { userAtom } from "../../../jotai/atom/userAtoms";
+import errMessagesAtom from "../../../jotai/atom/errMessagesAtom";
 
 // library
 import apiClient from "../../../lib/apiClient";
@@ -48,9 +48,9 @@ const CreatePersonData = () => {
   const [birthDate, setBirthDate] = useState<Date | null>(null);
 
   // 共有情報
-  const user = useRecoilValue(userAtom);
+  const user = useAtomValue(userAtom);
   const [validationErrorMessages, setValidationErrorMessages] =
-    useRecoilState(errMessagesAtom);
+    useAtom(errMessagesAtom);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -118,7 +118,7 @@ const CreatePersonData = () => {
               sx={{ mt: 3 }}
             >
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                   <FormControl fullWidth>
                     <TextField
                       autoComplete="given-name"
@@ -135,7 +135,7 @@ const CreatePersonData = () => {
                   </FormControl>
                 </Grid>
 
-                <Grid item xs={12} sm={8}>
+                <Grid size={{ xs: 12, sm: 8 }}>
                   <FormControl fullWidth>
                     <DatePicker
                       label="生年月日"
@@ -149,7 +149,7 @@ const CreatePersonData = () => {
                     />
                   </FormControl>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid size={{ xs: 12, sm: 4 }}>
                   <FormControl fullWidth>
                     <InputLabel htmlFor="gender">性別</InputLabel>
                     <Select

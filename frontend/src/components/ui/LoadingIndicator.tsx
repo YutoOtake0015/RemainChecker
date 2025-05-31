@@ -3,8 +3,8 @@ import React from "react";
 import { ClockLoader } from "react-spinners";
 
 // state
-import { useRecoilValue } from "recoil";
-import { loadingAtom } from "../../recoil/atom/loadingAtom";
+import { useAtomValue } from "jotai";
+import { loadingAtom } from "../../jotai/atom/loadingAtom";
 
 // MUI
 import { Box } from "@mui/material";
@@ -17,7 +17,7 @@ const clockStyle = {
 };
 
 const LoadingIndicator = () => {
-  const isLoading = useRecoilValue(loadingAtom);
+  const isLoading = useAtomValue(loadingAtom);
 
   if (!isLoading) {
     return null;

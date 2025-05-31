@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 
 // state
-import { useRecoilState, useSetRecoilState } from "recoil";
-import errMessagesAtom from "../../recoil/atom/errMessagesAtom";
-import userAtom from "../../recoil/atom/userAtoms";
+import { useAtom, useSetAtom } from "jotai";
+import errMessagesAtom from "../../jotai/atom/errMessagesAtom";
+import { userAtom } from "../../jotai/atom/userAtoms";
 
 // library
 import apiClient from "../../lib/apiClient";
@@ -55,9 +55,9 @@ export default function SignUp() {
   const [birthDate, setBirthDate] = useState<Date | null>(null);
 
   // 共有情報
-  const setUser = useSetRecoilState(userAtom);
+  const setUser = useSetAtom(userAtom);
   const [validationErrorMessages, setValidationErrorMessages] =
-    useRecoilState(errMessagesAtom);
+    useAtom(errMessagesAtom);
 
   // ローディング状態
   const { startLoading, stopLoading } = useLoading();
@@ -121,7 +121,7 @@ export default function SignUp() {
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
-              <Grid item xs={12}>
+              <Grid size={{ xs: 12 }}>
                 <FormControl fullWidth>
                   <TextField
                     autoComplete="given-name"
@@ -139,7 +139,7 @@ export default function SignUp() {
                 </FormControl>
               </Grid>
 
-              <Grid item xs={12}>
+              <Grid size={{ xs: 12 }}>
                 <FormControl fullWidth>
                   <TextField
                     required
@@ -161,7 +161,7 @@ export default function SignUp() {
                   />
                 </FormControl>
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={{ xs: 12 }}>
                 <FormControl fullWidth>
                   <TextField
                     required
@@ -184,7 +184,7 @@ export default function SignUp() {
                   />
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={8}>
+              <Grid size={{ xs: 12, sm: 8 }}>
                 <FormControl fullWidth>
                   <DatePicker
                     label="生年月日"
@@ -198,7 +198,7 @@ export default function SignUp() {
                   />
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{ xs: 12, sm: 4 }}>
                 <FormControl fullWidth>
                   <InputLabel htmlFor="gender">性別</InputLabel>
                   <Select

@@ -1,9 +1,6 @@
 // React & Next.js
 import { NextRouter } from "next/router";
 
-// state
-import { SetterOrUpdater } from "recoil";
-
 // library
 import apiClient from "./apiClient";
 import { handleErrorResponse } from "./errorHandler";
@@ -13,9 +10,9 @@ import { errType, userType } from "../types/type";
 
 // ユーザ情報取得関数
 export const fetchUser = async (
-  setUser: SetterOrUpdater<userType>,
-  setValidationErrorMessages: SetterOrUpdater<errType>,
-  router: NextRouter,
+  setUser: (user: userType) => void,
+  setValidationErrorMessages: (err: errType) => void,
+  router: NextRouter
 ) => {
   try {
     // サインイン時、ユーザーをセット
@@ -29,7 +26,7 @@ export const fetchUser = async (
           err,
           router,
           router.asPath,
-          setValidationErrorMessages,
+          setValidationErrorMessages
         );
         signout(setUser, router);
       });
@@ -43,9 +40,9 @@ export const fetchUser = async (
 export const signin = async (
   email: string,
   password: string,
-  setUser: SetterOrUpdater<userType>,
-  setValidationErrorMessages: SetterOrUpdater<errType>,
-  router: NextRouter,
+  setUser: (user: userType) => void,
+  setValidationErrorMessages: (err: errType) => void,
+  router: NextRouter
 ) => {
   try {
     // サインインAPIを実行
@@ -73,7 +70,7 @@ export const signin = async (
         // resSetCookieが存在しない、もしくはエラーステータスの場合
         if (!resSetCookie || resSetCookie.status !== 200) {
           throw new Error(
-            resSetCookie?.statusText || "Cookieの設定に失敗しました",
+            resSetCookie?.statusText || "Cookieの設定に失敗しました"
           );
         }
 
@@ -87,7 +84,7 @@ export const signin = async (
           err,
           router,
           router.asPath,
-          setValidationErrorMessages,
+          setValidationErrorMessages
         );
       });
   } catch (err) {

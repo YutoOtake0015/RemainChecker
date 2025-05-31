@@ -184,7 +184,7 @@ export default function Home() {
                   sx={{ mt: 3 }}
                 >
                   <Grid container spacing={2}>
-                    <Grid item xs={12} sm={8} sx={{ margin: "auto" }}>
+                    <Grid size={{ xs: 12, sm: 8 }} sx={{ margin: "auto" }}>
                       <FormControl fullWidth>
                         <DatePicker
                           label="生年月日"
@@ -198,7 +198,7 @@ export default function Home() {
                         />
                       </FormControl>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
+                    <Grid size={{ xs: 12, sm: 4 }}>
                       <FormControl fullWidth>
                         <InputLabel htmlFor="gender">性別</InputLabel>
                         <Select

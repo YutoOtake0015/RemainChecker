@@ -1,16 +1,13 @@
 // React & Next.js
 import { NextApiRequest, NextApiResponse } from "next";
 
-// modules
-import { destroyCookie } from "nookies";
-
 type Data = {
   message: string;
 };
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>,
+  res: NextApiResponse<Data>
 ) {
   try {
     // メソッドを確認
@@ -22,7 +19,7 @@ export default async function handler(
 
     res.setHeader(
       "Set-Cookie",
-      "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=Strict",
+      "auth_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=Strict"
     );
 
     return res.status(200).json({ message: "Cookie削除成功" });

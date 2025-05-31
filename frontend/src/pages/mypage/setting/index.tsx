@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 // state
-import { useRecoilState } from "recoil";
-import userAtom from "../../../recoil/atom/userAtoms";
-import errMessagesAtom from "../../../recoil/atom/errMessagesAtom";
+import { useAtom } from "jotai";
+import { userAtom } from "../../../jotai/atom/userAtoms";
+import errMessagesAtom from "../../../jotai/atom/errMessagesAtom";
 
 // library
 import apiClient from "../../../lib/apiClient";
@@ -43,9 +43,9 @@ const Setting = () => {
   const [password, setPassword] = useState<string>("");
 
   // 共有情報
-  const [user, setUser] = useRecoilState<userType>(userAtom);
+  const [user, setUser] = useAtom<userType>(userAtom);
   const [validationErrorMessages, setValidationErrorMessages] =
-    useRecoilState<errType>(errMessagesAtom);
+    useAtom<errType>(errMessagesAtom);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -132,7 +132,7 @@ const Setting = () => {
               sx={{ mt: 3 }}
             >
               <Grid container spacing={2}>
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                   <FormControl fullWidth>
                     <TextField
                       required
@@ -149,7 +149,7 @@ const Setting = () => {
                     />
                   </FormControl>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                   <FormControl fullWidth>
                     <TextField
                       required
