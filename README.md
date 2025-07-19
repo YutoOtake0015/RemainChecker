@@ -94,9 +94,10 @@ erDiagram
     String sex
     DateTime birthDate
     Boolean isAccountUser
+    Int userId
     }
 
-    "User" ||--}| "Person" : ""
+    Person ||--o{ User : "userId"
 ```
 
 # 環境構築　〜　ローカル実行方法
