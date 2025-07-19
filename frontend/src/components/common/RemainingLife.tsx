@@ -25,6 +25,7 @@ const initialState = {
   minute: undefined,
   second: undefined,
   isExceeded: false,
+  isInitialized: false,
 };
 
 // useReducerで実行する関数
@@ -136,6 +137,7 @@ const RemainingLife = React.memo(({ person }: RemainingLifeProps) => {
             hour: hours,
             minute: minutes,
             second: seconds,
+            isInitialized: true,
           },
         });
 
@@ -159,7 +161,7 @@ const RemainingLife = React.memo(({ person }: RemainingLifeProps) => {
     return value.toString().padStart(2, "0");
   };
 
-  if (isLoading) {
+  if (isLoading || !state.isInitialized) {
     return (
       <Box sx={{ display: "flex", textAlign: "center", ...clipStyle }}>
         <ClipLoader size={50} color={"#000000"} speedMultiplier={1} />
