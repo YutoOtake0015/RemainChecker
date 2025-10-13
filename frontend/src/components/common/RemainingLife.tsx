@@ -202,4 +202,4 @@ const RemainingLife = React.memo(({ person }: RemainingLifeProps) => {
 
 RemainingLife.displayName = "RemainingLife";
 
-export default RemainingLife;
+export default React.memo(RemainingLife);
